@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Navbar />
-      <main>{children}</main>
+      <main className="flex-1 overflow-auto">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
