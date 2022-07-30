@@ -22,7 +22,3 @@ export type BRAND = {
   sources: SOURCE[];
   passed: boolean;
 };
-
-export type GET_ALL_BRANDS = {
-    getAllBrands: BRAND[];
-}

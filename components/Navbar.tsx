@@ -1,9 +1,18 @@
-export default function Navbar(): JSX.Element {
+// todo..
+
+import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/router";
+import { SyntheticEvent } from "react";
+
+export default function Navbar() {
+  const router = useRouter();
+  const currentPathName = router.pathname === "/" ? "생수" : router.pathname;
+
+
+
   return (
-    <nav className="flex justify-center h-20 border-solid border-2 border-black rounded-lg">
-      <div className="flex flex-col justify-center">
-        <h1 className="text-center text-3xl">Navbar</h1>
-      </div>
-    </nav>
+    <div className="flex justify-center h-10">
+      <span>{currentPathName}</span>
+    </div>
   );
 }
