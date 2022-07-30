@@ -57,6 +57,7 @@ export default function Home({ data }: props) {
         <meta name="description" content="Created by MOOCHINDEV" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Ranking waterBrands={waterBrands} />
     </Layout>
   );
