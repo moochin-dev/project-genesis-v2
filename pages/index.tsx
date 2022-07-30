@@ -26,6 +26,14 @@ export const getStaticProps: GetStaticProps = async () => {
           image_url
           price
           passed
+<<<<<<< Updated upstream
+=======
+          purchase_link
+          released_date
+          sources {
+            name
+          }
+>>>>>>> Stashed changes
         }
       }
     `,
