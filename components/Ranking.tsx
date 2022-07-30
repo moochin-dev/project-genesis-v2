@@ -1,15 +1,14 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import * as TYPE from "../src/types";
 import Header from "./Header";
+import { imgLoader } from "../lib/utils";
 
 interface RankingProps {
   waterBrands: TYPE.BRAND[];
 }
 
 export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
-  const imgLoader = ({ src, width }: { src: string; width: number }) => {
-    return src + `?w=${width}`;
-  };
   const sortedWaterBrands = [...waterBrands].sort((a, b) => {
     if (a.passed && b.passed) {
       if (a.price < b.price) return -1;
@@ -19,6 +18,15 @@ export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
     if (!a.passed && b.passed) return 1;
     return 0;
   });
+
+  console.log(waterBrands);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/detail-demo");
+  };
+
   return (
     <>
       <Header pageName="생수" />
@@ -44,9 +52,7 @@ export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
                     <span className="font-semibold">X</span>
                   )}
                   <div className="flex flex-col gap-1 mt-1">
-                    <span className="font-normal text-xs">
-                      {waterBrand.name}
-                    </span>
+                    <span className="text-xs">{waterBrand.name}</span>
                     <span className="font-light text-xs">
                       {waterBrand.company}
                     </span>
@@ -54,7 +60,10 @@ export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center ml-auto">
-                  <button className="rounded-full border text-sm w-20 h-7">
+                  <button
+                    className="rounded-full border text-sm w-20 h-7"
+                    onClick={handleClick}
+                  >
                     세부정보
                   </button>
                 </div>
