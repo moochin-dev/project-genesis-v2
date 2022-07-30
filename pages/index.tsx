@@ -1,7 +1,8 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import Image from "next/image";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import * as TYPE from "../src/types";
+import Ranking from "../components/Ranking";
 
 import {
   ApolloClient,
@@ -26,6 +27,9 @@ export const getStaticProps: GetStaticProps = async () => {
           image_url
           price
           passed
+          sources {
+            name
+          }
         }
       }
     `,
@@ -37,18 +41,13 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-type waterBrand = {
-  id: number;
-  name: string;
-  company: string;
-  image_url: string;
-  price: number;
-  passed: boolean;
-};
+interface props {
+  data: {
+    getAllBrands: TYPE.BRAND[];
+  };
+}
 
-const Home: NextPage = ({
-  data,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+export default function Home({ data }: props) {
   const waterBrands = data.getAllBrands;
 
   return (
@@ -58,25 +57,8 @@ const Home: NextPage = ({
         <meta name="description" content="Created by MOOCHINDEV" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {waterBrands.map((waterBrand: waterBrand) => (
-        <div
-          key={waterBrand.id}
-          style={{
-            display: "flex",
-            border: "solid 1px black",
-            borderRadius: "3px",
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <h2>{waterBrand.name}</h2>
-            <p>{waterBrand.company}</p>
-            <p>{waterBrand.price}</p>
-            <p>{`passed?: ${waterBrand.passed ? `yes` : `no`}`}</p>
-          </div>
-        </div>
-      ))}
+
+      <Ranking waterBrands={waterBrands} />
     </Layout>
   );
-};
-
-export default Home;
+}
