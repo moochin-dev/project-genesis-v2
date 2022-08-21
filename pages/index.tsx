@@ -3,6 +3,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import * as TYPE from "../src/types";
 import Ranking from "../components/Ranking";
+import Header from "../components/Header";
 
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
@@ -48,7 +49,7 @@ export default function Home({ data }: props) {
   const waterBrands = data.getAllBrands;
 
   return (
-    <Layout>
+    <Layout header={<Header />}>
       <Head>
         <title>지금 내가 마시고 있는 물의 수질적합도는..?</title>
         <meta name="description" content="Created by MOOCHINDEV" />

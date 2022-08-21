@@ -1,12 +1,11 @@
-interface props {
-  pageName: string;
-}
+import React from "react";
 
-export default function Header({ pageName }: props): JSX.Element {
+export default function Header() {
   return (
-    <nav className="flex justify-between h-14 border-b">
-      <div className="flex flex-col justify-center">
-        <h1 className="text-center text-3xl font-semibold">{pageName}</h1>
+    <nav className="h-16 mt-10 mb-8">
+      <div className="flex flex-col gap-2">
+        <p className="contentSubTitle fontColor707070 ">당신이 먹는 생수</p>
+        <p className="mainTitle fontColor222222">수질 랭킹</p>
       </div>
     </nav>
   );
