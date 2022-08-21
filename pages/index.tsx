@@ -49,14 +49,15 @@ export default function Home({ data }: props) {
   const waterBrands = data.getAllBrands;
 
   return (
-    <Layout header={<Header />}>
+    <>
       <Head>
         <title>지금 내가 마시고 있는 물의 수질적합도는..?</title>
         <meta name="description" content="Created by MOOCHINDEV" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Ranking waterBrands={waterBrands} />
-    </Layout>
+      <Layout header={<Header />}>
+        <Ranking waterBrands={waterBrands} />
+      </Layout>
+    </>
   );
 }
