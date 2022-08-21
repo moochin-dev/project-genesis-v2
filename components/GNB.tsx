@@ -4,7 +4,7 @@ import ShareIcon from "../src/svg/ShareIcon";
 
 export default function GNB() {
   return (
-    <div className="flex justify-between px-3 items-center">
+    <div className="flex justify-between px-3 items-center h-14">
       <LogoIcon />
       <ShareIcon />
     </div>
