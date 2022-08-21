@@ -4,12 +4,7 @@ import Layout from "../components/Layout";
 import * as TYPE from "../src/types";
 import Ranking from "../components/Ranking";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 const client = new ApolloClient({
   uri: "https://passunestback.kro.kr/graphql",
