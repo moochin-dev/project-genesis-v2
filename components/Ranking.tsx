@@ -19,8 +19,6 @@ export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
     return 0;
   });
 
-  console.log(waterBrands);
-
   const router = useRouter();
 
   const handleClick = () => {
