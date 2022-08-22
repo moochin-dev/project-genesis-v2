@@ -26,7 +26,6 @@ a {
     "Malgun Gothic", sans-serif;
   font-weight: 600;
   letter-spacing: 0%;
-  line-height: 120%;
   font-size: 34px;
   margin: 0;
 }
@@ -82,6 +81,26 @@ a {
   margin: 0;
 }
 
+.contentCharBrand {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+  font-weight: 200;
+  letter-spacing: -4%;
+  font-size: 10px;
+  margin: 0;
+}
+
+.contentCharPrice {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0%;
+  font-size: 12px;
+  margin: 0;
+}
+
 .contentSubText {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
     "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
@@ -99,6 +118,16 @@ a {
   font-weight: 100;
   letter-spacing: -4%;
   font-size: 10px;
+  margin: 0;
+}
+
+.detailButton {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0%;
+  font-size: 11px;
   margin: 0;
 }
 

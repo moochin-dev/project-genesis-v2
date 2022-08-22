@@ -27,7 +27,7 @@ export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col gap-2 border-t">
+    <div className="flex flex-col border-t">
       {sortedWaterBrands.map((waterBrand, index) => {
         const imageJSX = (
           <Image

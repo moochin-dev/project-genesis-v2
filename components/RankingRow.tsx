@@ -1,4 +1,5 @@
 import React from "react";
+import DetailButton from "../src/svg/DetailButton";
 
 type props = {
   key: number;
@@ -22,25 +23,30 @@ export default function RankingRow({
   price,
 }: props): JSX.Element {
   return (
-    <div className="p-2 h-19 flex gap-2" key={key}>
+    <div className="pl-2 pt-2 w-full h-19 flex gap-2" key={key}>
       {/* 이미지 */}
-      <div className="w-15 h-15 border rounded-lg overflow-hidden">
+      <div className="pb-2 w-15 h-15 border rounded-lg overflow-hidden">
         {imageJSX}
       </div>
-      <div className="flex">
-        {/* 랭킹 (passed가 false인 경우 X로 표현) */}
-        <div className="w-5 h-15">
-          {isPassed ? (
-            <span className="font-semibold">{rankingNo}</span>
-          ) : (
-            <span className="font-semibold">X</span>
-          )}
+      <div className="pb-2 flex border-b w-full">
+        <div className="flex">
+          {/* 랭킹 (passed가 false인 경우 X로 표현) */}
+          <div className="w-5 h-15">
+            {isPassed ? (
+              <span className="font-semibold">{rankingNo}</span>
+            ) : (
+              <span className="font-semibold">X</span>
+            )}
+          </div>
+          {/* 상품명, 브랜드, 가격 */}
+          <div className="p-1 flex flex-col">
+            <p className="contentChartTitle">{name}</p>
+            <p className="contentCharBrand mt-2">{company}</p>
+            <p className="contentCharPrice mt-3">{`${price} 원/100ml`}</p>
+          </div>
         </div>
-        {/* 상품명, 브랜드, 가격 */}
-        <div className="p-1 flex flex-col">
-          <p className="contentChartTitle">{name}</p>
-          <p className="contentText">{company}</p>
-          <p>{`${price} 원/100ml`}</p>
+        <div className="ml-auto mr-2 flex flex-col justify-center">
+          <DetailButton />
         </div>
       </div>
     </div>
