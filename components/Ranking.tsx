@@ -9,7 +9,7 @@ interface RankingProps {
   waterBrands: TYPE.BRAND[];
 }
 
-export default function Ranking({ waterBrands }: RankingProps): JSX.Element {
+export default function Ranking({ waterBrands }: RankingProps) {
   const sortedWaterBrands = [...waterBrands].sort((a, b) => {
     if (a.passed && b.passed) {
       if (a.price < b.price) return -1;

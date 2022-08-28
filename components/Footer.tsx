@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
+import RankingPageButton from "./Footer/Buttons/RankingPageButton";
+import SearchPageButton from "./Footer/Buttons/SearchPageButton";
+import DetailPageButton from "./Footer/Buttons/DetailPageButton";
 
 export default function Footer(): JSX.Element {
   const router = useRouter();
@@ -8,41 +11,20 @@ export default function Footer(): JSX.Element {
     router.push("/");
   };
 
+  const [isRankingPage, setIsRankingPage] = useState(true);
+  const [isSearchPage, setIsSerachPage] = useState(false);
+  const [isDetailPage, setIsDetailPage] = useState(false);
+
   return (
-    <footer className="flex w-full h-20 bg-slate-50 justify-between px-6">
-      <button
-        className="flex flex-col justify-center"
-        onClick={handleHomeClick}
-      >
-        <div className="h-14 w-14 flex flex-col">
-          <div className="border rounded-sm h-10 w-10 mx-auto"></div>
-          <span className="text-xs mx-auto font-extralight">HOME</span>
-        </div>
-      </button>
-      <button className="flex flex-col justify-center">
-        <div className="h-14 w-14 flex flex-col">
-          <div className="border rounded-sm h-10 w-10 mx-auto"></div>
-          <span className="text-xs mx-auto font-extralight">RANK</span>
-        </div>
-      </button>
-      <button className="flex flex-col justify-center">
-        <div className="h-14 w-14 flex flex-col">
-          <div className="border rounded-sm h-10 w-10 mx-auto"></div>
-          <span className="text-xs mx-auto font-extralight">SEARCH</span>
-        </div>
-      </button>
-      <button className="flex flex-col justify-center">
-        <div className="h-14 w-14 flex flex-col">
-          <div className="border rounded-sm h-10 w-10 mx-auto"></div>
-          <span className="text-xs mx-auto font-extralight">CONTACT</span>
-        </div>
-      </button>
-      <button className="flex flex-col justify-center">
-        <div className="h-14 w-14 flex flex-col">
-          <div className="border rounded-sm h-10 w-10 mx-auto"></div>
-          <span className="text-xs mx-auto font-extralight">SHARE</span>
-        </div>
-      </button>
+    <footer className="flex w-full h-16 bg-slate-50 justify-between px-8 pt-1 footer-box">
+      <RankingPageButton
+        isActive={isRankingPage}
+        handleClick={handleHomeClick}
+      />
+      <SearchPageButton isActive={isSearchPage} handleClick={handleHomeClick} />
+      <DetailPageButton isActive={isDetailPage} handleClick={handleHomeClick} />
     </footer>
   );
 }
+
+

@@ -145,3 +145,17 @@ a {
 .fontColor222222 {
   color: #222222;
 }
+
+.footer-box {
+  position: relative;
+
+}
+
+.footer-box::after {
+  content:"";
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(83.61deg, rgba(48, 208, 208, 0.1) -2.03%, rgba(52, 8, 105, 0.1) 108.99%);
+  filter: blur(5px);
+  inset: -5px 0 0 0;
+}
